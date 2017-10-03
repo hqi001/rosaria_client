@@ -2,7 +2,7 @@
 
 This is a ROS package that I ([@hanzheteng](https://github.com/hanzheteng)) implement some control algorithms for [Pioneer 3-AT](http://www.mobilerobots.com/researchrobots/p3at.aspx) robots.
 
-This package is forked from [rosaria_client](https://github.com/pengtang/rosaria_client), which has a good demo client and tutorials. Please refer to the link above for detailed information. This documentation only focus on the new features.
+This package is forked from [rosaria_client](https://github.com/pengtang/rosaria_client), which has a good demo client program and some tutorials. Please refer to the link above for detailed information. This document only focuses on the new features.
 
 Update date: Oct. 3, 2017
 
@@ -28,4 +28,4 @@ Beta V1.8 (Apr. 20) Add launch file for rosaria_client
 
 Beta V1.9 (Apr. 30) Added print_state feature, documentation
 
-Beta V2.0 (Oct. 3, 2017) Forked from [rosaria_client](https://github.com/pengtang/rosaria_client)
+Beta V2.0 (Oct. 3, 2017) Forked from [pengtang/rosaria_client](https://github.com/pengtang/rosaria_client)
