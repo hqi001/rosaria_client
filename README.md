@@ -1,25 +1,12 @@
-#[Rosaria](http://wiki.ros.org/ROSARIA) Demo Client
-This package is a series of simple demos meant to demonstrate how the robot is controlled in both ROS and Mobile Robots's [Aria](http://robots.mobilerobots.com/wiki/ARIA) 
+# Rosaria Client
+This is a ROS package that I ([@hanzheteng](https://github.com/hanzheteng)) implement some control algorithms for [Pioneer 3-AT](http://www.mobilerobots.com/researchrobots/p3at.aspx) robots.
 
-# Usage
+This package is forked from [rosaria_client](https://github.com/pengtang/rosaria_client), which has a good demo client and tutorials. Please refer to the link above for detailed information.
+This documentation only focus on the new features.
 
-Prerequisites: catkin workspace is setup, and use "git clone https://github.com/pengtang/rosaria_client.git" under the directory of catkin_ws/src. Then, under the catkin_ws directory type "catkin_make" to compile and make executable files. Last, still under catkin_ws, type "source devel/setup.bash".
+Welcome to contact me if you have any problem.
 
-Step 1. If you are operating with a real robot, look at Case 1, if you are using the mobilesim, look at Case 2.
-
- * Case 1: Please refer to http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA
-  
- * Case 2: Open mobilesim, typically achieved by using the MobileSim command in the terminal
-
-Step 2. Open a terminal with two tabs. Do this sequentially: The first tab type "roscore", the second tab type "roslaunch rosaria_client rosaria_client_launcher.launch".
-
-Alternatively, if you don't want to use a launch file and would like to open the interface manually, follow these steps:
-     -Open a terminal with three tabs. 
-     -Do this sequentially: The first tab type "roscore", the second tab type "rosrun rosaria RosAria", the third tab type "rosrun rosaria_client interface"
-
-Step 3. Follow the instruction in the interface program, run the programs from the interface menu respectively.
-
-Update date: Apr. 20
+Update date: Oct. 3, 2017
 *************************************************************************
 
 # Update Log
@@ -36,10 +23,10 @@ Beta V1.4 (Apr. 10) Change the spin from 180 to 90 degree, finished the print_st
 
 Beta V1.5 (Apr. 14) Add function enable_motors, fix the printing information about the front_motors and rear_motors state.
 
-Beta V1.6 (Apr 16) Added a functional version of the interface 
+Beta V1.6 (Apr 16) Added a functional version of the interface
 
 Beta V1.7 (Apr 18) Changed stop key to spacebar in teleop, where the user now hits 'q' to quit.  Also edited interface to prompt user for inputs every time its ready for a selection
 
 Beta V1.8 (Apr. 20) Add launch file for rosaria_client
 
-Beta V1.9 (Apr. 30) Added print_state feature, documentation 
+Beta V1.9 (Apr. 30) Added print_state feature, documentation
