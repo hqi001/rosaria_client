@@ -1,10 +1,11 @@
 # Rosaria Client
 
-This is a ROS package that I ([@hanzheteng](https://github.com/hanzheteng)) implement some control algorithms for [Pioneer 3-AT](http://www.mobilerobots.com/researchrobots/p3at.aspx) robots.
+This is a ROS package forked from [rosaria_client](https://github.com/pengtang/rosaria_client), which is good demo for beginner to learn how to start on ROSARIA. Please refer to the link above for detailed information. 
 
-This package is forked from [rosaria_client](https://github.com/pengtang/rosaria_client), which has a good demo client program and some tutorials. Please refer to the link above for detailed information. This document only focuses on the new features.
+This document only focuses on the new features. In other words, I try to implement some control algorithms for [Pioneer 3-AT](http://www.mobilerobots.com/researchrobots/p3at.aspx) robots.
 
-Update date: Oct. 3, 2017
+Update date: Oct. 12, 2017
+by [@hanzheteng](https://github.com/hanzheteng)
 
 # Update Log
 
