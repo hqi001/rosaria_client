@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(rosaria_client)
 
+## Add support for C++11, supported in ROS Kinetic and newer
+# add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -112,6 +116,7 @@ add_executable(teleop src/teleop.cpp)
 add_executable(print_state src/print_state.cpp)
 add_executable(interface src/interface.cpp)
 add_executable(enable_motors src/enable_motors.cpp)
+add_executable(handpoint src/handpoint.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -145,6 +150,10 @@ target_link_libraries(interface
 target_link_libraries(enable_motors
   ${catkin_LIBRARIES}
   )
+
+target_link_libraries(handpoint 
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##

@@ -32,3 +32,6 @@ Beta V1.9 (Apr. 30) Added print_state feature, documentation
 Beta V2.0 (Oct. 3, 2017) Forked from [pengtang/rosaria_client](https://github.com/pengtang/rosaria_client)
 
 Beta V2.1 (Oct. 12, 2017) Change default serial port to "ttyS0" instead of "ttyUSB0" in launch file. Fix the bug that robots do not move continuously. (According to [wiki of ROSARIA](http://wiki.ros.org/ROSARIA), there is a WatchDog such that if no cmd_vel messages are received after 600ms, rosaria will stop the robot.) 
+
+Beta V2.2 (Oct. 19, 2017) Added "hand point" control method utilizing feedback linearization. Hand point is a point that 10 inch away from the center. In other words, we regard this robot as a point in the front of itself instead of the center.
+
