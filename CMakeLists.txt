@@ -100,6 +100,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -117,6 +118,7 @@ add_executable(print_state src/print_state.cpp)
 add_executable(interface src/interface.cpp)
 add_executable(enable_motors src/enable_motors.cpp)
 add_executable(handpoint src/handpoint.cpp)
+add_executable(pose_cmd src/pose_cmd.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -154,6 +156,11 @@ target_link_libraries(enable_motors
 target_link_libraries(handpoint 
    ${catkin_LIBRARIES}
 )
+
+target_link_libraries(pose_cmd 
+   ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##
