@@ -110,15 +110,18 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(go_three_second src/go_three_second.cpp)
-add_executable(spin_counterclockwise src/spin_counterclockwise.cpp)
-add_executable(spin_clockwise src/spin_clockwise.cpp)
-add_executable(teleop src/teleop.cpp)
-add_executable(print_state src/print_state.cpp)
-add_executable(interface src/interface.cpp)
-add_executable(enable_motors src/enable_motors.cpp)
-add_executable(handpoint src/handpoint.cpp)
+add_executable(go_three_second src/demo/go_three_second.cpp)
+add_executable(spin_counterclockwise src/demo/spin_counterclockwise.cpp)
+add_executable(spin_clockwise src/demo/spin_clockwise.cpp)
+add_executable(teleop src/demo/teleop.cpp)
+add_executable(print_state src/demo/print_state.cpp)
+add_executable(interface src/demo/interface.cpp)
+add_executable(enable_motors src/demo/enable_motors.cpp)
+
+add_executable(robot src/robot.cpp)
+add_executable(teleop_hp src/teleop_hp.cpp)
 add_executable(pose_cmd src/pose_cmd.cpp)
+add_executable(trajectory src/trajectory.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -153,7 +156,7 @@ target_link_libraries(enable_motors
   ${catkin_LIBRARIES}
   )
 
-target_link_libraries(handpoint 
+target_link_libraries(robot 
    ${catkin_LIBRARIES}
 )
 
@@ -161,6 +164,13 @@ target_link_libraries(pose_cmd
    ${catkin_LIBRARIES}
 )
 
+target_link_libraries(teleop_hp 
+   ${catkin_LIBRARIES}
+)
+
+target_link_libraries(trajectory 
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##

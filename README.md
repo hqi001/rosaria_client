@@ -4,7 +4,7 @@ This is a ROS package forked from [rosaria_client](https://github.com/pengtang/r
 
 This document shows the new features focusing on cooperative multi-robot systems. I perform my research on [Pioneer 3-AT](http://www.mobilerobots.com/researchrobots/p3at.aspx) robots.
 
-Update date: Nov. 15, 2017
+Update date: Nov. 30, 2017
 by [@hanzheteng](https://github.com/hanzheteng)
 
 # Update Log
@@ -36,4 +36,7 @@ Beta V2.1 (Oct. 12, 2017) Change default serial port to "ttyS0" instead of "ttyU
 Beta V2.2 (Oct. 19, 2017) Added "hand point" control method utilizing feedback linearization. Hand point is a point that 10 inch away from the center. In other words, we regard this robot as a point in the front of itself instead of the center.
 
 Beta V2.3 (Nov. 15, 2017) Added pose control strategy (pose_cmd.cpp); Moved class defination to "Pioneer.h"; Followed standard message format "geometry_msgs::Pose2D".
+
+Beta V2.4 (Nov. 30, 2017) Add a new function: tracking a reference trajectory (circle); change message type of 'vel_hp' from Twist to Vector3 in order to make linear x, y velocity clearly; pack all demos into a directory and modify a new teleop_op fit in Vector3 msg form.
+
 
