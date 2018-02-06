@@ -39,4 +39,4 @@ Beta V2.3 (Nov. 15, 2017) Added pose control strategy (pose_cmd.cpp); Moved clas
 
 Beta V2.4 (Nov. 30, 2017) Add a new function: tracking a reference trajectory (circle); change message type of 'vel_hp' from Twist to Vector3 in order to make linear x, y velocity clearly; pack all demos into a directory and modify a new teleop_op fit in Vector3 msg form.
 
-Beta V2.5 (Feb. 5, 2017) Forked from [hanzheteng/rosaria_client](https://github.com/hanzheteng/rosaria_client). Added sonar sensing in teleop_hp. Pioneer 3-AT will no longer move forward if told to do so if there is an objected too close in front of it.
+Beta V3.0 (Feb. 5, 2017) Forked from [hanzheteng/rosaria_client](https://github.com/hanzheteng/rosaria_client). Added sonar sensing in 'teleop_hp.cpp'. Pioneer 3-AT will no longer move forward if told to do so if there is an objected too close in front of it.
