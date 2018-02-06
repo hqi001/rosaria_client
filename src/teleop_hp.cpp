@@ -3,6 +3,7 @@
 #include <signal.h>
 #include <termios.h>
 #include <stdio.h>
+#include <sensor_msgs/PointCloud.h>
 
 #define KEYCODE_R 0x43
 #define KEYCODE_L 0x44
@@ -16,10 +17,15 @@ class TeleopRosAria
   public:
     TeleopRosAria();
     void keyLoop();
+    void isFarEnough(const sensor_msgs::PointCloud&);
   private:
     ros::NodeHandle nh_;
     double linear_x, linear_y, x_scale_, y_scale_;
     ros::Publisher vel_pub_;
+    ros::Subscriber sub_sonar;
+    bool far3 = true;
+    bool far4 = true;
+    sensor_msgs::PointCloud sonar_cmd;
 };
 TeleopRosAria::TeleopRosAria():
   linear_x(0),
@@ -30,6 +36,7 @@ TeleopRosAria::TeleopRosAria():
   nh_.param("scale_linear_x", x_scale_, x_scale_);
   nh_.param("scale_linear_y", y_scale_, y_scale_);
   vel_pub_ = nh_.advertise<geometry_msgs::Vector3>("RosAria/cmd_vel_hp", 1);
+  sub_sonar = nh_.subscribe("RosAria/sonar", 1, &TeleopRosAria::isFarEnough, this);
 }
 int kfd = 0;
 struct termios cooked, raw;
@@ -66,6 +73,7 @@ void TeleopRosAria::keyLoop()
   puts("Press q to stop the program");
   for(;;)
   {
+    ros::spinOnce();
     // get the next event from the keyboard
     if(read(kfd, &c, 1) < 0)
 	  {
@@ -89,11 +97,22 @@ void TeleopRosAria::keyLoop()
     	  dirty = true;
     	  break;
     	case KEYCODE_U:
-    	  ROS_DEBUG("UP");
-    	  linear_x = 0.1;
-    	  linear_y = 0;
-    	  dirty = true;
-    	  break;
+	      if(far3 && far4)
+        {
+          ROS_DEBUG("UP");
+          linear_x = 0.1;
+          linear_y = 0;
+          dirty = true;
+        }
+
+        else
+        {
+          ROS_DEBUG("UP");
+          linear_x = 0;
+          linear_y = 0;
+          dirty = true;
+        }
+        break;
     	case KEYCODE_D:
     	  ROS_DEBUG("DOWN");
     	  linear_x = -0.1;
@@ -120,7 +139,28 @@ void TeleopRosAria::keyLoop()
   	{
   	  vel_pub_.publish(vel);
   	  dirty=false;
-  	}
+    }
   }
   return;
+}
+
+void TeleopRosAria::isFarEnough(const sensor_msgs::PointCloud& msg)
+{
+  this->sonar_cmd = msg;
+  if (this->sonar_cmd.points[3].x < 0.8)
+  {
+    far3 = false;
+  }
+  else
+  {
+    far3 = true;
+  }
+  if (this->sonar_cmd.points[4].x < 0.8)
+  {
+    far4 = false;
+  }
+  else
+  {
+    far4 = true;
+  }
 }
